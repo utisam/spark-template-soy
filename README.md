@@ -1,6 +1,6 @@
 # spark-template-soy
 
-How to use the Google Soy template route for Spark example:
+How to use the Google Closure Templates (Soy) route for Spark example:
 
 ```java
 public static void main(final String[] args) {
