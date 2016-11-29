@@ -1,0 +1,6 @@
+{
+  "name": "Spark-template-soy",
+  "tagline": "Google Soy template route for Spark",
+  "body": "# spark-template-soy\r\n\r\nHow to use the Google Closure Templates (Soy) route for Spark example:\r\n\r\n```java\r\npublic static void main(final String[] args) {\r\n    String templateDirectory = args[0];\r\n\r\n    // Use StandardSoyTofuStore if you do not want to enable auto reloading\r\n    SoyTofuStore tofuStore = new AutoReloadSoyTofuStore(templateDirectory);\r\n    SoyTemplateEngine templateEngine = new SoyTemplateEngine();\r\n\r\n    get(\"/\", (req, res) -> {\r\n        Map<String, Object> model = new HashMap<>();\r\n        model.put(\"hello\", \"Soy World\");\r\n        model.put(\"person\", \"Foobar\");\r\n\r\n        return tofuStore.getTofu().newRenderer(\"com.example.page.index\")\r\n            .setData(model);\r\n    }, templateEngine);\r\n}\r\n```\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
